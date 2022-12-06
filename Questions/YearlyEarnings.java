@@ -14,9 +14,19 @@ public class YearlyEarnings extends MovieDataUser implements FurtherQuestions, A
     {
         super(data);
     }
+
+    public String getAnswerToQuestion(int givenYear){
+        year=givenYear;
+        return findAnswer();
+    }
     @Override
-    public String answerToQuestion() {
+    public String getAnswerToQuestion() {
         furtherQuestions();
+        return findAnswer();
+    }
+
+    @Override
+    public String findAnswer() {
         int earnings=0;
         for(int i=0;i<movieData.size();i++){
             IMBDMovies currentMovieEntry=movieData.get(i);
