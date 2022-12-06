@@ -2,15 +2,12 @@ package Movie;
 
 import static org.junit.Assert.*;
 
-import Movie.IMBDMovies;
 import Movie_Data.ReadInFiles;
 import Questions.BestMovie;
 import Questions.ListOfDirectors;
-import Questions.YearlyEarnings;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.time.Year;
 import java.util.ArrayList;
 
 public class MovieQuestionsTesting {
@@ -35,14 +32,20 @@ public class MovieQuestionsTesting {
                 "Zack Snyder\n" +
                 "Roland Emmerich\n" +
                 "Stanley Kubrick";
-        assertEquals(expectedAnswer, new ListOfDirectors(movieList).answerToQuestion());
+        assertEquals(expectedAnswer, new ListOfDirectors(movieList).getAnswerToQuestion());
     }
 
     @Test
     public void bestMovieTest(){
         String expectedAnswer="The Avengers";
-        String output=new BestMovie(movieList).answerToQuestion();
+        String output=new BestMovie(movieList).getAnswerToQuestion(2012);
         assertEquals(expectedAnswer,output);
+    }
+
+    @Test
+    public void bestMovieBadYearTest(){
+        String expectedAnswer="No data for given year of 6009";
+        assertEquals(expectedAnswer,new BestMovie(movieList).getAnswerToQuestion(6009));
     }
 
 }

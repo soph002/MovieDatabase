@@ -12,10 +12,20 @@ public class BestMovie extends MovieDataUser implements AnswerQuestions, Further
     {
         super(data);
     }
+    public String getAnswerToQuestion(int givenYear)
+    {
+        year=givenYear;
+        return findAnswer();
+    }
 
     @Override
-    public String answerToQuestion() {
+    public String getAnswerToQuestion() {
         furtherQuestions();
+        return findAnswer();
+    }
+
+    @Override
+    public String findAnswer() {
         for(int i=0;i<movieData.size();i++)
         {
             if(movieData.get(i).getYear()==year)
