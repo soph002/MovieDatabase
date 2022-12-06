@@ -12,7 +12,12 @@ public class ListOfDirectors extends MovieDataUser implements  AnswerQuestions{
         super(movieList);
     }
     @Override
-    public String answerToQuestion() {
+    public String getAnswerToQuestion() {
+        return findAnswer();
+    }
+
+    @Override
+    public String findAnswer() {
         HashSet<String> directorList=new HashSet<>();
         for(int i=0;i<movieData.size();i++)
         {
