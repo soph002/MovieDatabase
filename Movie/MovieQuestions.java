@@ -30,7 +30,6 @@ public class MovieQuestions {
             "\n 3. Directors appearing Most " + // number of directors
             "\n 4. Director/Cast information based on Rating or Money Rank" + // director/cast then rating/money rank
             "\n 5. Highest Ranked Movie based on a year"; //year then find highest rank
-
     public MovieQuestions(){
         moviesList=new ReadInFiles().readInMovieFiles(ratingFile,movieGrossFile,movieCastFile);
         questions.put(1,new YearlyEarnings(moviesList));
@@ -51,7 +50,7 @@ public class MovieQuestions {
                 System.out.println(INVALID_INPUT_TRY_AGAIN +optionsForUser);
                 userIn=Integer.parseInt(input.nextLine());
             }
-            System.out.println(questions.get(userIn).answerToQuestion());
+            System.out.println(questions.get(userIn).getAnswerToQuestion());
             System.out.println(MORE_QUESTIONS);
             String choice=input.nextLine();
             while(!(choice.equals(YES) || choice.equals(NO))){

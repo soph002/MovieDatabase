@@ -6,6 +6,7 @@ import Movie_Data.ReadInFiles;
 import Questions.BestMovie;
 import Questions.InfoBasedOnRank;
 import Questions.ListOfDirectors;
+import Questions.YearlyEarnings;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -65,8 +66,23 @@ public class MovieQuestionsTesting {
 
     @Test
     public void infoBasedOnRankBadTest(){
+        //Method should catch bad input with error statement
         String expectedAnswer="No cast found for movie based on rating at rank 120";
         assertEquals(expectedAnswer,new InfoBasedOnRank(movieList).getAnswerToQuestion(120,"rating","cast"));
+    }
+
+    @Test
+    public void yearlyEarningsTest(){
+        //tests with good input to make sure it is adding up the earnings correctly
+        String expectedAnswer="1071410189";
+        assertEquals(expectedAnswer,new YearlyEarnings(movieList).getAnswerToQuestion(2012));
+    }
+
+    @Test
+    public void yearlyEarningsBadTest(){
+        //bad input test
+        String expectedAnswer="0";
+        assertEquals(expectedAnswer, new YearlyEarnings(movieList).getAnswerToQuestion(7000));
     }
 
 }
