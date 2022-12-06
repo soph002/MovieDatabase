@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import Movie_Data.ReadInFiles;
 import Questions.BestMovie;
+import Questions.InfoBasedOnRank;
 import Questions.ListOfDirectors;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -46,6 +47,26 @@ public class MovieQuestionsTesting {
     public void bestMovieBadYearTest(){
         String expectedAnswer="No data for given year of 6009";
         assertEquals(expectedAnswer,new BestMovie(movieList).getAnswerToQuestion(6009));
+    }
+
+    @Test
+    public void infoBasedOnRankTestDirector(){
+        // should give the avengers director
+        String expectedAnswer="Leonard Nimoy";
+        assertEquals(expectedAnswer,new InfoBasedOnRank(movieList).getAnswerToQuestion(3,"grossing","director"));
+    }
+
+    @Test
+    public void infoBasedOnRankTestCast(){
+        //should give back dark knight rises cast
+        String expectedAnswer="Marcello Mastroianni ,Claudia Cardinale ,Anouk Aimée ,Sandra Milo ,Rossella Falk";
+        assertEquals(expectedAnswer,new InfoBasedOnRank(movieList).getAnswerToQuestion(12,"rating","cast"));
+    }
+
+    @Test
+    public void infoBasedOnRankBadTest(){
+        String expectedAnswer="No cast found for movie based on rating at rank 120";
+        assertEquals(expectedAnswer,new InfoBasedOnRank(movieList).getAnswerToQuestion(120,"rating","cast"));
     }
 
 }

@@ -19,9 +19,21 @@ public class InfoBasedOnRank extends MovieDataUser implements FurtherQuestions,A
     {
         super(data);
     }
+
+    public String getAnswerToQuestion(int giveRank, String givenTypeOfRank, String givenMember) {
+        rank=giveRank;
+        moneyOrRating=givenTypeOfRank;
+        directorOrCast=givenMember;
+        return findAnswer();
+    }
     @Override
-    public String answerToQuestion() {
+    public String getAnswerToQuestion() {
         furtherQuestions();
+        return findAnswer();
+    }
+
+    @Override
+    public String findAnswer() {
         boolean foundAnswer=false;
         for(int i=0;i<movieData.size();i++)
         {
