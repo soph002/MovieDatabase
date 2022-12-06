@@ -16,7 +16,10 @@ public class ListOfDirectors extends MovieDataUser implements  AnswerQuestions{
         HashSet<String> directorList=new HashSet<>();
         for(int i=0;i<movieData.size();i++)
         {
-            directorList.add(movieData.get(i).getDirector());
+            if(!movieData.get(i).getDirector().equals("no director listed"))
+            {
+                directorList.add(movieData.get(i).getDirector());
+            }
         }
         return String.join("\n",directorList);
     }

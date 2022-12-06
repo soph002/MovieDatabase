@@ -1,4 +1,4 @@
-package Files;
+package Movie_Data;
 
 import Movie.IMBDMovies;
 
@@ -51,9 +51,10 @@ public class parseData {
         ArrayList<String> top5cast=new ArrayList<>();
         Scanner lineScan=new Scanner(fileLine);
         parseGeneralData(lineScan);
+        director = lineScan.next();
         while (lineScan.hasNext()) {
-            director = lineScan.next();
-            top5cast.add(lineScan.next());
+            String castMem=lineScan.next();
+            top5cast.add(castMem);
         }
         if(imbdMovies.containsKey(title))
         {

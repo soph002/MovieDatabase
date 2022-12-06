@@ -1,13 +1,12 @@
 package Movie;
 
-import Files.ReadInFiles;
-import Movie.IMBDMovies;
-import Files.ReadInFiles;
+import Movie_Data.ReadInFiles;
 import Questions.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
 
 public class MovieQuestions {
 
@@ -15,9 +14,9 @@ public class MovieQuestions {
     public static final String NO = "No";
     public static final String YES = "Yes";
     public static final String MORE_QUESTIONS = "Would you like to ask another question? (Enter Yes/No)";
-    private final String ratingFile= "Files/imdb_movies_toprated.txt";
-    private final String movieGrossFile= "Files/imdb_movies_gross.txt";
-    private final String movieCastFile= "Files/imdb_movies_cast.txt";
+    private final String ratingFile= "Movie_Data/imdb_movies_toprated.txt";
+    private final String movieGrossFile= "Movie_Data/imdb_movies_gross.txt";
+    private final String movieCastFile= "Movie_Data/imdb_movies_cast.txt";
 
     private ArrayList<IMBDMovies> moviesList;
 
@@ -33,9 +32,6 @@ public class MovieQuestions {
             "\n 5. Highest Ranked Movie based on a year"; //year then find highest rank
 
     public MovieQuestions(){
-//        ratingFile=ratingFileName;
-//        movieGrossFile=movieGrossFileName;
-//        movieCastFile=movieCastFileName;
         moviesList=new ReadInFiles().readInMovieFiles(ratingFile,movieGrossFile,movieCastFile);
         questions.put(1,new YearlyEarnings(moviesList));
         questions.put(2,new ListOfDirectors(moviesList));

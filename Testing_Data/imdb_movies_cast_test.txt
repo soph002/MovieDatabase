@@ -1,0 +1,11 @@
+Rank	Title	Year	Director	Cast 1	Cast 2	Cast 3	Cast 4	Cast 5
+1	Avatar	2009	Clyde Geronimi	Rod Taylor	J. Pat O'Malley	Betty Lou Gerson	Martha Wentworth	Ben Wright
+2	E.T	1982	Sidney Lumet	Martin Balsam	John Fiedler	Lee J. Cobb	E.G. Marshall	Jack Klugman
+3	Shrek 2	2004	Stanley Kubrick	Keir Dullea	Gary Lockwood	William Sylvester	Daniel Richter	Leonard Rossiter
+4	Star Wars	1977	Roland Emmerich	John Cusack	Amanda Peet	Chiwetel Ejiofor	Thandie Newton	Oliver Platt
+5	Star Wars: Episode I - The Phantom Menace	1999	Roland Emmerich	John Cusack	Amanda Peet	Chiwetel Ejiofor	Thandie Newton	Oliver Platt
+6	The Avengers	2012	Leonard Nimoy	Tom Selleck	Steve Guttenberg	Ted Danson	Nancy Travis	Margaret Colin
+7	The Dark Knight	2008	Zack Snyder	Gerard Butler	Lena Headey	Dominic West	David Wenham	Vincent Regan
+8	The Dark Knight Rises	2012	Federico Fellini	Marcello Mastroianni	Claudia Cardinale	Anouk Aimée	Sandra Milo	Rossella Falk
+9	Titanic	1997	Ron Howard	Russell Crowe	Ed Harris	Jennifer Connelly	Christopher Plummer	Paul Bettany
+10	Pirates of the Caribbean: Dead Man's Chest	2006	John Lasseter	Dave Foley	Kevin Spacey	Julia Louis-Dreyfus	Hayden Panettiere	Phyllis Diller
