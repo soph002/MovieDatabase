@@ -1,3 +1,7 @@
+package Files;
+
+import Movie.IMBDMovies;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -27,7 +31,7 @@ public class parseData {
         }
         return new IMBDMovies(title,year,rating,rank);
     }
-    public void parseMovieGrossData(HashMap<String,IMBDMovies> imbdMovies, String fileLine) {
+    public void parseMovieGrossData(HashMap<String, IMBDMovies> imbdMovies, String fileLine) {
         int boxOffice=0;
         Scanner lineScan=new Scanner(fileLine);
         parseGeneralData(lineScan);
@@ -41,7 +45,7 @@ public class parseData {
         }
     }
 
-    public void parseMovieCastData(HashMap<String,IMBDMovies> imbdMovies, String fileLine){
+    public void parseMovieCastData(HashMap<String, IMBDMovies> imbdMovies, String fileLine){
         // Rank	Title	Year	Director	Cast 1	Cast 2	Cast 3	Cast 4	Cast 5
         String director=" ";
         ArrayList<String> top5cast=new ArrayList<>();

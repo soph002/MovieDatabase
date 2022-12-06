@@ -1,3 +1,7 @@
+package Files;
+
+import Movie.IMBDMovies;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +12,7 @@ import java.util.Scanner;
 //reads in movie files and produces an arraylist of movies
 public class ReadInFiles {
 
-    private HashMap<String,IMBDMovies> imbdMovies;
+    private HashMap<String, IMBDMovies> imbdMovies;
     private parseData dataParserForMovies=new parseData();
 
     public ArrayList<IMBDMovies> readInMovieFiles(String ratingFile, String movieGrossFile, String movieCastFile){
