@@ -3,10 +3,7 @@ package Movie;
 import static org.junit.Assert.*;
 
 import Movie_Data.ReadInFiles;
-import Questions.BestMovie;
-import Questions.InfoBasedOnRank;
-import Questions.ListOfDirectors;
-import Questions.YearlyEarnings;
+import Questions.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -83,6 +80,14 @@ public class MovieQuestionsTesting {
         //bad input test
         String expectedAnswer="0";
         assertEquals(expectedAnswer, new YearlyEarnings(movieList).getAnswerToQuestion(7000));
+    }
+
+    @Test
+    public void directorAppearancesTest(){
+        String expectedAnswer=" Roland Emmerich with 2 appearances \n" +
+                "Federico Fellini with 1 appearances \n" +
+                "John Lasseter with 1 appearances \n";
+        assertEquals(expectedAnswer,new DirectorsAppearances(movieList).getAnswerToQuestion(3));
     }
 
 }
