@@ -10,6 +10,9 @@ import java.util.HashSet;
 
 public class ListOfDirectors extends MovieDataUser implements  AnswerQuestions{
 
+
+    public static final String NEW_LINE_DELIMITER = "\n";
+
     public ListOfDirectors(ArrayList<IMBDMovies> movieList)
     {
         super(movieList);
@@ -24,11 +27,11 @@ public class ListOfDirectors extends MovieDataUser implements  AnswerQuestions{
         HashSet<String> directorList=new HashSet<>();
         for(int i=0;i<movieData.size();i++)
         {
-            if(!movieData.get(i).getDirector().equals("no director listed"))
+            if(!movieData.get(i).getDirector().equals(NO_DIRECTOR_LISTED))
             {
                 directorList.add(movieData.get(i).getDirector());
             }
         }
-        return String.join("\n",directorList);
+        return String.join(NEW_LINE_DELIMITER,directorList);
     }
 }

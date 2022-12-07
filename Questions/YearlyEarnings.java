@@ -1,8 +1,5 @@
 package Questions;
 
-import Questions.AnswerQuestions;
-import Questions.FurtherQuestions;
-
 import java.util.ArrayList;
 import Movie.IMBDMovies;
 
@@ -11,6 +8,7 @@ import Movie.IMBDMovies;
 
 public class YearlyEarnings extends MovieDataUser implements FurtherQuestions, AnswerQuestions {
 
+    public static final String YEAR_QUESTION = "Enter a year";
     int year;
 
     public YearlyEarnings(ArrayList<IMBDMovies> data)
@@ -30,6 +28,7 @@ public class YearlyEarnings extends MovieDataUser implements FurtherQuestions, A
 
     @Override
     public String findAnswer() {
+        //adds up earnings for each movie from give year
         int earnings=0;
         for(int i=0;i<movieData.size();i++){
             IMBDMovies currentMovieEntry=movieData.get(i);
@@ -43,7 +42,7 @@ public class YearlyEarnings extends MovieDataUser implements FurtherQuestions, A
 
     @Override
     public void furtherQuestions() {
-        System.out.println("Enter a year");
+        System.out.println(YEAR_QUESTION);
         year=Integer.parseInt(input.nextLine());
     }
 

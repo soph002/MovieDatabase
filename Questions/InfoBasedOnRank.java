@@ -11,6 +11,17 @@ import java.util.ArrayList;
 //  “Who directed the 100th highest-ranked movie?”
 public class InfoBasedOnRank extends MovieDataUser implements FurtherQuestions,AnswerQuestions{
 
+    public static final String RATING = "rating";
+    public static final String GROSSING = "grossing";
+    public static final String DIRECTOR = "director";
+    public static final String CAST = "cast";
+    public static final String INCORRECT_ENTRY_ENTER_DIRECTOR_OR_CAST = "Incorrect Entry: (Enter: director or cast)";
+    public static final String INCORRECT_ENTRY_ENTER_GROSSING_OR_RANKING = "Incorrect Entry: (Enter: grossing or rating)";
+    public static final String GROSSING_RANKING_QUESTION = "Would you like to look at movies based on grossing or rating? (Enter: grossing or rating)";
+    public static final String DIRECTOR_CAST_QUESTION = "Would you like to look see the director or the cast? (Enter: director or cast)";
+    public static final String RANK_QUESTION = "What rank would you like to look at? (enter a number ex: 5)";
+    public static final String NO_INFO_FOUND = "No information found for the following given options";
+    public static final String COMMA = ", ";
     int rank;
     String moneyOrRating;
     String directorOrCast;
@@ -37,17 +48,17 @@ public class InfoBasedOnRank extends MovieDataUser implements FurtherQuestions,A
         boolean foundAnswer=false;
         for(int i=0;i<movieData.size();i++)
         {
-            if(movieData.get(i).getRatingRank()==rank && moneyOrRating.equals("rating"))
+            if(movieData.get(i).getRatingRank()==rank && moneyOrRating.equals(RATING))
             {
                 foundAnswer=true;
             }
-            if(movieData.get(i).getGrossingRank()==rank && moneyOrRating.equals("grossing"))
+            if(movieData.get(i).getGrossingRank()==rank && moneyOrRating.equals(GROSSING))
             {
                 foundAnswer=true;
             }
             if(foundAnswer) //so no duplicated code
             {
-                if(directorOrCast.equals("director"))
+                if(directorOrCast.equals(DIRECTOR))
                 {
                     return movieData.get(i).getDirector();
                 }
@@ -56,27 +67,27 @@ public class InfoBasedOnRank extends MovieDataUser implements FurtherQuestions,A
                 }
             }
         }
-        return "No "+directorOrCast+" found for movie based on "+moneyOrRating+" at rank "+rank;
+        return NO_INFO_FOUND +moneyOrRating+COMMA+directorOrCast+ COMMA +rank;
     }
 
 
     @Override
     public void furtherQuestions() {
-        System.out.println("Would you like to look at movies based on grossing or ranking? (Enter: grossing or ranking");
+        System.out.println(GROSSING_RANKING_QUESTION);
         moneyOrRating=input.nextLine();
-        while(!(moneyOrRating.equals("grossing") || moneyOrRating.equals("ranking")))
+        while(!(moneyOrRating.equals(GROSSING) || moneyOrRating.equals(RATING)))
         {
-            System.out.println("Incorrect Entry: (Enter: grossing or ranking");
+            System.out.println(INCORRECT_ENTRY_ENTER_GROSSING_OR_RANKING);
             moneyOrRating=input.nextLine();
         }
-        System.out.println("Would you like to look see the director or the cast? (Enter: director or cast");
+        System.out.println(DIRECTOR_CAST_QUESTION);
         directorOrCast=input.nextLine();
-        while(!(directorOrCast.equals("director") || directorOrCast.equals("cast")))
+        while(!(directorOrCast.equals(DIRECTOR) || directorOrCast.equals(CAST)))
         {
-            System.out.println("Incorrect Entry: (Enter: director or cast");
+            System.out.println(INCORRECT_ENTRY_ENTER_DIRECTOR_OR_CAST);
             directorOrCast=input.nextLine();
         }
-        System.out.println("What rank would you like to see the "+directorOrCast+" for? (enter a number ex: 5)");
+        System.out.println(RANK_QUESTION);
         rank=Integer.parseInt(input.nextLine());
     }
 

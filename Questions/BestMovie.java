@@ -4,10 +4,12 @@ import Movie.IMBDMovies;
 
 import java.util.ArrayList;
 
-//Determines best movie from a given year
+//Determines the best movie from a given year
 
 public class BestMovie extends MovieDataUser implements AnswerQuestions, FurtherQuestions{
 
+    public static final String NO_DATA_FOUND = "No data for given year of ";
+    public static final String YEAR_QUESTION = "What year would you like to know the best movie for?";
     int year;
 
     public BestMovie(ArrayList<IMBDMovies> data)
@@ -35,12 +37,12 @@ public class BestMovie extends MovieDataUser implements AnswerQuestions, Further
                 return movieData.get(i).getTitle();
             }
         }
-        return "No data for given year of "+Integer.toString(year);
+        return NO_DATA_FOUND +Integer.toString(year);
     }
 
     @Override
     public void furtherQuestions() {
-        System.out.println("What year would you like to know the best movie for?");
+        System.out.println(YEAR_QUESTION);
         year=Integer.parseInt(input.next());
     }
 }
