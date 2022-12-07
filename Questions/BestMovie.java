@@ -4,6 +4,8 @@ import Movie.IMBDMovies;
 
 import java.util.ArrayList;
 
+//Determines best movie from a given year
+
 public class BestMovie extends MovieDataUser implements AnswerQuestions, FurtherQuestions{
 
     int year;

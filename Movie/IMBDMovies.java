@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class IMBDMovies {
 
-    private String title;
-    private int year;
+    private final String title;
+    private final int year;
     private double rating; //IBMD Rating
     private int earnings=0;
     private String director="no director listed";

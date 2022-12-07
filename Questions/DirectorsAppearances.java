@@ -4,6 +4,10 @@ import Movie.IMBDMovies;
 
 import java.util.*;
 
+// Give a list of some number of directors who appear most in the database.
+// The list should be given in order of the number of appearances.
+// Example: “Give a list of the top 5 directors who appear most.”
+
 public class DirectorsAppearances extends MovieDataUser implements FurtherQuestions,AnswerQuestions{
 
     int numDirectors;

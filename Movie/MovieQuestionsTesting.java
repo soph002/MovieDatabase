@@ -19,6 +19,7 @@ public class MovieQuestionsTesting {
 
     @BeforeClass
     public static void setUp(){
+        //create a movieList based on my test files
         movieList=new ReadInFiles().readInMovieFiles(RATING_FILE,MOVIE_GROSS_FILE,MOVIE_CAST_FILE);
     }
 

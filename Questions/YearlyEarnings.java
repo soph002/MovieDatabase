@@ -6,6 +6,9 @@ import Questions.FurtherQuestions;
 import java.util.ArrayList;
 import Movie.IMBDMovies;
 
+//  Give the total US box office earnings in the database in a single year.
+//		Example:  “What is the total earnings listed in 2007?
+
 public class YearlyEarnings extends MovieDataUser implements FurtherQuestions, AnswerQuestions {
 
     int year;

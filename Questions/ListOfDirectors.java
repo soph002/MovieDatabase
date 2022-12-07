@@ -5,6 +5,9 @@ import Movie.IMBDMovies;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+//  Give a list of all the directors of movies in the database.
+//  The list should be in alphabetical order and not list any director twice.
+
 public class ListOfDirectors extends MovieDataUser implements  AnswerQuestions{
 
     public ListOfDirectors(ArrayList<IMBDMovies> movieList)
